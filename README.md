@@ -1,5 +1,11 @@
 Test case to expose a troubling situation with Bundler.
 
+    $ ruby -Iinternal/lib main.rb
+    pass
+
+    $ bundle exec ruby main.rb
+    main.rb:3:in `<main>': undefined method `imp' for Internal:Module (NoMethodError)
+
 The standard rubygem setup has a lib/gem/version.rb which defines
 
     module MyGem
